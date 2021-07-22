@@ -4,12 +4,16 @@ import { Helmet } from "react-helmet";
 import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 import Watersheds from "./Watersheds";
 import InfoBox from "./InfoBox";
+import watershedData from "./static/Major_Watersheds_Regional.geojson.json";
+import hydroData from "./static/Hydrographic_Features_Poly.geojson.json";
+import Hydrography from "./Hydrography";
 
 function App() {
+  const CENTER = [40.028624, -75.186722];
   const [info, setInfo] = useState(false);
-  const [opacity, setOpacity] = useState(0);
+  const [opacity, setOpacity] = useState(1);
   const toggle = () => {
-    info ? setInfo(false) : setInfo("display");
+    setInfo((s) => !s);
   };
 
   return (
@@ -55,10 +59,10 @@ function App() {
           <span> satellite</span>
         </div>
       </header>
-      {info && <InfoBox open={info} />}
+      {info && <InfoBox open={info} classProp={info ? "fade-in" : ""} />}
       <MapContainer
-        center={[40.0217, -75.2013]}
-        zoom={11}
+        center={CENTER}
+        zoom={10}
         scrollWheelZoom={true}
         zoomControl={false}
         id="mapDiv"
@@ -74,7 +78,8 @@ function App() {
           opacity={opacity}
         />
         );
-        <Watersheds />
+        <Watersheds data={watershedData} />
+        <Hydrography data={hydroData} />
         <ZoomControl position="bottomright" />
       </MapContainer>
     </div>

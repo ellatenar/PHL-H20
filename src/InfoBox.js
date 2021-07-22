@@ -1,8 +1,8 @@
 import React from "react";
 
-const InfoBox = (open) => {
+const InfoBox = ({ open, classProp }) => {
   return (
-    <div className="info-box">
+    <div className={"info-box " + classProp}>
       <p>
         To support the work being done to preserve the Southern Unami dialect of
         Lenape spoken in this area, read more about{" "}
@@ -16,18 +16,8 @@ const InfoBox = (open) => {
         .
       </p>
       <p>
-        From{" "}
-        <a href="https://www.opendataphilly.org/dataset/major-watersheds-regional">
-          OpenDataPhilly
-        </a>
-        :{" "}
-        <span className="i">
-          Data was developed originally from either USGS and the 2004 Sanborn
-          DEM (digital elevation model) using ArcHydro watershed extraction
-          tools. Major watersheds are dissolved from subshed boundaries which
-          reflect surface flow in relationship to stormwater inlets and
-          outfalls.
-        </span>
+        all mapping data from{" "}
+        <a href="https://www.opendataphilly.org/">OpenDataPhilly</a>
       </p>
       <p>
         site design by <a href="https://github.com/ellatenar">Ella Heron</a>

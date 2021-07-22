@@ -1,8 +1,7 @@
 import React from "react";
 import { GeoJSON } from "react-leaflet";
-import watershedData from "./static/Major_Watersheds_Regional.geojson.json";
 
-const Watersheds = () => {
+const Watersheds = ({ data }) => {
   const onEachFeature = (feature, layer) => {
     const { ACRES, SQ_MILES, WATERSHED_NAME } = feature.properties;
 
@@ -15,7 +14,7 @@ const Watersheds = () => {
     layer.bindPopup(popUpText);
   };
 
-  return <GeoJSON data={watershedData} onEachFeature={onEachFeature} />;
+  return <GeoJSON data={data} onEachFeature={onEachFeature} />;
 };
 
 export default Watersheds;
