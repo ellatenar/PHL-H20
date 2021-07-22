@@ -50,7 +50,7 @@ p {
   right: 15vw;
   left: 15vw;
   bottom: 2vh;
-  z-index: 500;
+  z-index: 100;
   background-color: darkblue;
   color: white;
 }
@@ -79,4 +79,9 @@ span.i {
 .popup h2,
 .popupdata {
   text-align: center;
+}
+
+.layerslider {
+  bottom: 4vh;
+  right: 6vh;
 }
