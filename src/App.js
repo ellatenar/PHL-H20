@@ -21,6 +21,7 @@ function App() {
     setInfo((s) => !s);
   };
 
+  // Clean up datafile
   hydroData.features = hydroData.features.map((f) => ({
     ...f,
     properties: {

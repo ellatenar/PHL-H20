@@ -15,7 +15,7 @@ const Hydrography = ({ data }) => {
   };
 
   const style = (feature) => ({
-    weight: 2,
+    weight: 3,
   });
 
   return <GeoJSON data={data} onEachFeature={onEachFeature} style={style} />;
