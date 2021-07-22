@@ -1,9 +1,16 @@
+import React, { useState } from "react";
 import "./App.css";
 import { Helmet } from "react-helmet";
 import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 import Watersheds from "./Watersheds";
+import InfoBox from "./InfoBox";
 
 function App() {
+  const [info, setInfo] = useState(false);
+  const toggle = () => {
+    info ? setInfo(false) : setInfo("display");
+  };
+
   return (
     <div className="App">
       <Helmet>
@@ -23,19 +30,18 @@ function App() {
       </Helmet>
 
       <header className="App-header">
-        <p>
+        <div className="info-drop" onClick={toggle}>
+          💧
+        </div>
+        <p className="title">
           PHL{" "}
           <span className="blue">
             H<sub>2</sub>0
           </span>
         </p>
-        <p>
-          visualizing the watersheds of{" "}
-          <span className="strikethrough">Philadelphia</span> occupied
-          Lenapehoking
-        </p>
+        <p>visualizing the watersheds of occupied Lenapehoking</p>
       </header>
-
+      {info && <InfoBox open={info} />}
       <MapContainer
         center={[40.0217, -75.2013]}
         zoom={11}

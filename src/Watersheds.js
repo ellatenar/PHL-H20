@@ -8,8 +8,8 @@ const Watersheds = () => {
 
     const popUpText = `<div class="popup">
         <h2>${WATERSHED_NAME}</h2>
-        <div>${SQ_MILES.toFixed(2)} miles<sup>2</sup></div>
-        <div>${ACRES.toFixed(2)} acres</div>
+        <div class="popupdata">${SQ_MILES.toFixed(2)} miles<sup>2</sup></div>
+        <div class="popupdata">${ACRES.toFixed(2)} acres</div>
       </div>`;
 
     layer.bindPopup(popUpText);
