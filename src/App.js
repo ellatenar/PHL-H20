@@ -1,7 +1,7 @@
 import "./App.css";
 import { Helmet } from "react-helmet";
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
-import watershedData from "./static/Major_Watersheds_Regional.geojson.json";
+import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
+import Watersheds from "./Watersheds";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           crossorigin=""
         ></script>
       </Helmet>
+
       <header className="App-header">
         <p>
           PHL{" "}
@@ -29,22 +30,25 @@ function App() {
           </span>
         </p>
         <p>
-          mapping the watersheds of{" "}
+          visualizing the watersheds of{" "}
           <span className="strikethrough">Philadelphia</span> occupied
           Lenapehoking
         </p>
       </header>
+
       <MapContainer
         center={[40.0217, -75.2013]}
-        zoom={10}
+        zoom={11}
         scrollWheelZoom={true}
+        zoomControl={false}
         id="mapDiv"
       >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <GeoJSON data={watershedData} />
+        <Watersheds />
+        <ZoomControl position="bottomright" />
       </MapContainer>
     </div>
   );
