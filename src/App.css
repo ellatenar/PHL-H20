@@ -47,9 +47,9 @@ span.i {
   text-align: center;
 }
 
-.layerslider {
-  bottom: 4vh;
-  right: 6vh;
+.slider {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 /* Info box &c. */
@@ -65,7 +65,7 @@ span.i {
   width: 70vw;
   right: 15vw;
   left: 15vw;
-  bottom: 2vh;
+  bottom: 5vh;
   z-index: 500;
   background-color: darkblue;
   color: white;

@@ -14,7 +14,12 @@ const Watersheds = ({ data }) => {
     layer.bindPopup(popUpText);
   };
 
-  return <GeoJSON data={data} onEachFeature={onEachFeature} />;
+  const style = (feature) => ({
+    weight: 4,
+    color: "#0000ea",
+  });
+
+  return <GeoJSON data={data} onEachFeature={onEachFeature} style={style} />;
 };
 
 export default Watersheds;

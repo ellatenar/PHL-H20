@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Helmet } from "react-helmet";
-import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  ZoomControl,
+  LayersControl,
+} from "react-leaflet";
 import Watersheds from "./Watersheds";
 import InfoBox from "./InfoBox";
 import watershedData from "./static/Major_Watersheds_Regional.geojson.json";
@@ -15,6 +20,17 @@ function App() {
   const toggle = () => {
     setInfo((s) => !s);
   };
+
+  hydroData.features = hydroData.features.map((f) => ({
+    ...f,
+    properties: {
+      ...f.properties,
+      CREEK_NAME: f.properties.CREEK_NAME?.replace(
+        /trib\b|trib\./,
+        "tributary"
+      ),
+    },
+  }));
 
   return (
     <div className="App">
@@ -44,7 +60,7 @@ function App() {
             H<sub>2</sub>0
           </span>
         </p>
-        <p>visualizing the watersheds of occupied Lenapehoking</p>
+        <p>visualizing the watershed of occupied Lenapehoking</p>
         <div className="slider">
           <span>grid </span>
           <input
@@ -60,6 +76,7 @@ function App() {
         </div>
       </header>
       {info && <InfoBox open={info} classProp={info ? "fade-in" : ""} />}
+
       <MapContainer
         center={CENTER}
         zoom={10}
@@ -78,8 +95,17 @@ function App() {
           opacity={opacity}
         />
         );
-        <Watersheds data={watershedData} />
-        <Hydrography data={hydroData} />
+        <LayersControl position="topright">
+          <LayersControl.Overlay checked name="Regional watershed boundaries">
+            <Watersheds data={watershedData} />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay
+            checked
+            name="Rivers, streams, and creeks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          >
+            <Hydrography data={hydroData} />
+          </LayersControl.Overlay>
+        </LayersControl>
         <ZoomControl position="bottomright" />
       </MapContainer>
     </div>
