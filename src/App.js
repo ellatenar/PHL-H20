@@ -9,8 +9,8 @@ import {
 } from "react-leaflet";
 import Watersheds from "./Watersheds";
 import InfoBox from "./InfoBox";
-import watershedData from "./static/Major_Watersheds_Regional.geojson.json";
-import hydroData from "./static/Hydrographic_Features_Poly.geojson.json";
+import watershedData from "./data/Major_Watersheds_Regional.geojson.json";
+import hydroData from "./data/Hydrographic_Features_Poly.geojson.json";
 import Hydrography from "./Hydrography";
 
 function App() {
