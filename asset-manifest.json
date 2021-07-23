@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PHL-H20/static/css/main.a8919d39.chunk.css",
+    "main.js": "/PHL-H20/static/js/main.f53b2c7b.chunk.js",
+    "main.js.map": "/PHL-H20/static/js/main.f53b2c7b.chunk.js.map",
+    "runtime-main.js": "/PHL-H20/static/js/runtime-main.53e88527.js",
+    "runtime-main.js.map": "/PHL-H20/static/js/runtime-main.53e88527.js.map",
+    "static/js/2.1687da0d.chunk.js": "/PHL-H20/static/js/2.1687da0d.chunk.js",
+    "static/js/2.1687da0d.chunk.js.map": "/PHL-H20/static/js/2.1687da0d.chunk.js.map",
+    "static/js/3.adca1a61.chunk.js": "/PHL-H20/static/js/3.adca1a61.chunk.js",
+    "static/js/3.adca1a61.chunk.js.map": "/PHL-H20/static/js/3.adca1a61.chunk.js.map",
+    "index.html": "/PHL-H20/index.html",
+    "static/css/main.a8919d39.chunk.css.map": "/PHL-H20/static/css/main.a8919d39.chunk.css.map",
+    "static/js/2.1687da0d.chunk.js.LICENSE.txt": "/PHL-H20/static/js/2.1687da0d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53e88527.js",
+    "static/js/2.1687da0d.chunk.js",
+    "static/css/main.a8919d39.chunk.css",
+    "static/js/main.f53b2c7b.chunk.js"
+  ]
+}
