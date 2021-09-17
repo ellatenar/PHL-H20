@@ -2,7 +2,7 @@
 
 Plotting the watersheds and aqueous systems of occupied Lenapehoking. All data is from OpenDataPhilly, and displayed with React-Leaflet.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Available online at https://ellatenar.github.io/PHL-H20/
 
 ## Installing
 
